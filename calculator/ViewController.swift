@@ -66,6 +66,16 @@ class ViewController: UIViewController {
         board.text = board.text!+"0"
     }
     
+   
+    @IBAction func point(_ sender: Any) {
+         board.text = board.text!+"."
+    }
+    
+    
+    
+    
+    
+    
     @IBAction func calculator(_ sender: Any)
     {
         if(flag==1)
@@ -93,7 +103,6 @@ class ViewController: UIViewController {
             board.text = "\(division)"
         }
         
-        
     }
     
     @IBAction func add(_ sender: Any) {
@@ -102,11 +111,6 @@ class ViewController: UIViewController {
         flag = 1
         
     }
-    
-    @IBAction func clear(_ sender: Any) {
-        board.text = ""
-    }
-    
     @IBAction func subtraction(_ sender: Any) {
         temp = Int(board.text!)!
         board.text = ""
@@ -125,7 +129,14 @@ class ViewController: UIViewController {
         board.text = ""
         flag = 4
     }
-    
+    @IBAction func clear(_ sender: Any) {
+        board.text = ""
+    }
+    @IBAction func aclear(_ sender: Any) {
+        board.text = "0"
+        temp = Int(board.text!)!
+        board.text = ""
+    }
     
 }
 
