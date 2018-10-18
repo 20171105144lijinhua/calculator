@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     var temp:Double = 0
     var flag:Double = 0
     var point:Double = 0.0
-    var rw:Double = 0
+    var rw:Double = 0.0
+    var n = 0
 
     @IBOutlet weak var board: UITextField!
     
@@ -117,7 +118,18 @@ class ViewController: UIViewController {
     
     @IBAction func reversion(_ sender: Any)
     {
-        board.text = "-" + board.text!
+        
+        n+=1
+        temp = Double(board.text!)!
+        if(n % 2 == 0)
+        {
+            board.text = "\(temp)"
+        }
+        else
+        {
+            board.text = "-" + "\(temp)"
+        }
+        
     }
     
     
