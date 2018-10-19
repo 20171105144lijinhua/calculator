@@ -7,18 +7,17 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    var temp:Double = 0
+    var temp:Double = 0.0
     var flag:Double = 0
     var point:Double = 0.0
     var rw:Double = 0.0
-    var n = 0
+    var wd = 0
 
     @IBOutlet weak var board: UITextField!
     
@@ -32,52 +31,62 @@ class ViewController: UIViewController {
     @IBAction func NO2(_ sender: Any)
     {
         board.text = board.text!+"2"
+        
     }
     
     @IBAction func N03(_ sender: Any)
     {
         board.text = board.text!+"3"
+        
     }
     
     
     @IBAction func NO4(_ sender: Any)
     {
         board.text = board.text!+"4"
+        
     }
     
     @IBAction func NO5(_ sender: Any)
     {
         board.text = board.text!+"5"
+        
     }
     
     @IBAction func NO6(_ sender: Any)
     {
         board.text = board.text!+"6"
+        
     }
     
     
     @IBAction func NO7(_ sender: Any)
     {
         board.text = board.text!+"7"
+        
     }
     
     
     @IBAction func NO8(_ sender: Any)
     {
         board.text = board.text!+"8"
+       
     }
     
     
     @IBAction func NO9(_ sender: Any)
     {
         board.text = board.text!+"9"
+        
     }
     
     
     @IBAction func NO0(_ sender: Any)
     {
         board.text = board.text!+"0"
+       
     }
+    
     
    
     @IBAction func point(_ sender: Any)
@@ -85,6 +94,15 @@ class ViewController: UIViewController {
         board.text = board.text! + "."
         point = (board.text! as NSString).doubleValue
     }
+    
+    
+    @IBAction func square(_ sender: Any)
+    {
+        temp = Double(board.text!)!
+        temp = temp * temp
+        board.text = "\(temp)"
+    }
+    
     
     
     @IBAction func calculator(_ sender: Any)
@@ -113,27 +131,24 @@ class ViewController: UIViewController {
             division = temp / Double(board.text!)!
             board.text = "\(division)"
         }
-       
+       wd = Int(Double(board.text!)!)
     }
     
     @IBAction func reversion(_ sender: Any)
     {
-        
-        n+=1
-        temp = Double(board.text!)!
-        if(n % 2 == 0)
-        {
-            board.text = "\(temp)"
-        }
-        else
-        {
-            board.text = "-" + "\(temp)"
-        }
-        
+        wd = Int(Double(board.text!)!)
+       board.text = "\(wd * -1)"
     }
     
     
-    @IBAction func add(_ sender: Any) {
+    @IBAction func sqrtt(_ sender: Any) {
+        temp = Double(board.text!)!
+        temp = sqrt(temp)
+        board.text = "\(temp)"
+    }
+    
+    @IBAction func add(_ sender: Any)
+    {
         temp = Double(board.text!)!
         board.text = ""
         flag = 1
