@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     var flag:Double = 0
     var point:Double = 0.0
     var rw:Double = 0.0
-    var wd = 0
 
     @IBOutlet weak var board: UITextField!
     
@@ -131,13 +130,13 @@ class ViewController: UIViewController {
             division = temp / Double(board.text!)!
             board.text = "\(division)"
         }
-       wd = Int(Double(board.text!)!)
+    
     }
     
     @IBAction func reversion(_ sender: Any)
     {
-        wd = Int(Double(board.text!)!)
-       board.text = "\(wd * -1)"
+        temp = Double(board.text!)!
+       board.text = "\(temp * -1)"
     }
     
     
