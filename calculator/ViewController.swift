@@ -14,10 +14,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     var temp:Double = 0.0
-    var flag:Double = 0
+    var flag = 0
     var point:Double = 0.0
     var rw:Double = 0.0
-
+    var n = 1
     @IBOutlet weak var board: UITextField!
     
     
@@ -110,7 +110,8 @@ class ViewController: UIViewController {
         {
             var sum:Double = 0
             sum = temp + Double(board.text!)!
-            board.text = "\(sum)"
+            board.text  = "\(sum)"
+
         }
         if(flag==2)
         {
@@ -127,7 +128,7 @@ class ViewController: UIViewController {
         if(flag==4)
         {
             var division :Double = 0
-            division = temp / Double(board.text!)!
+            division  = temp / Double(board.text!)!
             board.text = "\(division)"
         }
     
@@ -148,17 +149,31 @@ class ViewController: UIViewController {
     
     @IBAction func add(_ sender: Any)
     {
-        temp = Double(board.text!)!
-        board.text = ""
-        flag = 1
+        if(n == -1)
+        {
+            var sum:Double = 0
+        sum = temp + Double(board.text!)!
+            board.text  = "\(sum)"
+             n *= -1
+            
+        }
+        if(n==1)
+        {
+            temp = Double(board.text!)!
+            board.text = ""
+            flag = 1
+            n *= -1
+        }
         
     }
     @IBAction func subtraction(_ sender: Any) {
-        temp = Double(board.text!)!
-        board.text = ""
-        flag = 2
+     
+            temp = Double(board.text!)!
+            board.text = ""
+            flag = 2
+
+        
     }
-    
     @IBAction func multiplication(_ sender: Any) {
         temp = Double(board.text!)!
         board.text = ""
