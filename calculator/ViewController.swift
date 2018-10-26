@@ -19,8 +19,7 @@ class ViewController: UIViewController {
     var rw:Double = 0.0
     var n = 1
     @IBOutlet weak var board: UITextField!
-    
-    
+
     @IBAction func NO1(_ sender: Any)
     {
     board.text = board.text!+"1"
@@ -149,22 +148,10 @@ class ViewController: UIViewController {
     
     @IBAction func add(_ sender: Any)
     {
-        if(n == -1)
-        {
-            var sum:Double = 0
-        sum = temp + Double(board.text!)!
-            board.text  = "\(sum)"
-             n *= -1
-            
-        }
-        if(n==1)
-        {
+       
             temp = Double(board.text!)!
             board.text = ""
             flag = 1
-            n *= -1
-        }
-        
     }
     @IBAction func subtraction(_ sender: Any) {
      
