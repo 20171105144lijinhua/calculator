@@ -17,71 +17,148 @@ class ViewController: UIViewController {
     var flag = 0
     var point:Double = 0.0
     var rw:Double = 0.0
-    var n = 1
+    var seeagain = 0
     @IBOutlet weak var board: UITextField!
 
     @IBAction func NO1(_ sender: Any)
     {
-    board.text = board.text!+"1"
-        
+        if seeagain == 1
+            {
+                board.text = board.text! + "1"
+            }
+            else
+            {
+                board.text = "1"
+            }
+        seeagain = 1
     }
     
     @IBAction func NO2(_ sender: Any)
     {
-        board.text = board.text!+"2"
+        if seeagain == 1
+        {
+            board.text = board.text! + "2"
+        }
+        else
+        {
+            board.text = "2"
+        }
+        seeagain = 1
         
     }
     
     @IBAction func N03(_ sender: Any)
     {
-        board.text = board.text!+"3"
+        if seeagain == 1
+        {
+            board.text = board.text! + "3"
+        }
+        else
+        {
+            board.text = "3"
+        }
+        seeagain = 1
         
     }
     
     
     @IBAction func NO4(_ sender: Any)
     {
-        board.text = board.text!+"4"
-        
+        if seeagain == 1
+        {
+            board.text = board.text! + "4"
+        }
+        else
+        {
+            board.text = "4"
+        }
+        seeagain = 1
     }
     
     @IBAction func NO5(_ sender: Any)
     {
-        board.text = board.text!+"5"
+        if seeagain == 1
+        {
+            board.text = board.text! + "5"
+        }
+        else
+        {
+            board.text = "5"
+        }
+        seeagain = 1
         
     }
     
     @IBAction func NO6(_ sender: Any)
     {
-        board.text = board.text!+"6"
-        
+        if seeagain == 1
+        {
+            board.text = board.text! + "6"
+        }
+        else
+        {
+            board.text = "6"
+        }
+        seeagain = 1
     }
     
     
     @IBAction func NO7(_ sender: Any)
     {
-        board.text = board.text!+"7"
+        if seeagain == 1
+        {
+            board.text = board.text! + "7"
+        }
+        else
+        {
+            board.text = "7"
+        }
+        seeagain = 1
         
     }
     
     
     @IBAction func NO8(_ sender: Any)
     {
-        board.text = board.text!+"8"
+        if seeagain == 1
+        {
+            board.text = board.text! + "8"
+        }
+        else
+        {
+            board.text = "8"
+        }
+        seeagain = 1
        
     }
     
     
     @IBAction func NO9(_ sender: Any)
     {
-        board.text = board.text!+"9"
+        if seeagain == 1
+        {
+            board.text = board.text! + "9"
+        }
+        else
+        {
+            board.text = "9"
+        }
+        seeagain = 1
         
     }
     
     
     @IBAction func NO0(_ sender: Any)
     {
-        board.text = board.text!+"0"
+        if seeagain == 1
+        {
+            board.text = board.text! + "0"
+        }
+        else
+        {
+            board.text = "0"
+        }
+        seeagain = 1
        
     }
     
@@ -148,38 +225,56 @@ class ViewController: UIViewController {
     
     @IBAction func add(_ sender: Any)
     {
-       
+        if flag == 1
+        {
+         board.text = "\(temp + Double(board.text!)!)"
+        }
             temp = Double(board.text!)!
-            board.text = ""
+            seeagain = 2
             flag = 1
     }
-    @IBAction func subtraction(_ sender: Any) {
-     
+    @IBAction func subtraction(_ sender: Any)
+    {
+        if flag == 2
+        {
+            board.text = "\(temp - Double(board.text!)!)"
+        }
             temp = Double(board.text!)!
-            board.text = ""
+            seeagain = 2
             flag = 2
 
         
     }
-    @IBAction func multiplication(_ sender: Any) {
-        temp = Double(board.text!)!
-        board.text = ""
-        flag = 3
+    @IBAction func multiplication(_ sender: Any)
+    {
+        if flag == 3
+        {
+            board.text = "\(temp * Double(board.text!)!)"
+        }
+           temp = Double(board.text!)!
+           seeagain = 2
+           flag = 3
         
     }
     
-   @IBAction func division(_ sender: Any) {
-        temp = Double(board.text!)!
-        board.text = ""
-        flag = 4
+   @IBAction func division(_ sender: Any)
+   {
+         if flag == 4
+        {
+            board.text = "\(temp / Double(board.text!)!)"
+        }
+           temp = Double(board.text!)!
+           seeagain = 2
+           flag = 4
     }
     @IBAction func clear(_ sender: Any) {
         board.text = ""
     }
     @IBAction func aclear(_ sender: Any) {
+        temp = 0.00
+        flag = 0
+        seeagain = 0
         board.text = "0"
-        temp = Double(board.text!)!
-        board.text = ""
     }
     
 }
