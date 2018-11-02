@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var rw:Double = 0.0
     var seeagain = 0
     @IBOutlet weak var board: UITextField!
+    
 
     @IBAction func NO1(_ sender: Any)
     {
@@ -207,7 +208,7 @@ class ViewController: UIViewController {
             division  = temp / Double(board.text!)!
             board.text = "\(division)"
         }
-    
+        seeagain = 2
     }
     
     @IBAction func reversion(_ sender: Any)
