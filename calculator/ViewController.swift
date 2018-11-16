@@ -236,7 +236,7 @@ class ViewController: UIViewController {
     }
     @IBAction func subtraction(_ sender: Any)
     {
-        if flag == 2
+        if flag == 2                                                                                               
         {
             board.text = "\(temp - Double(board.text!)!)"
         }
